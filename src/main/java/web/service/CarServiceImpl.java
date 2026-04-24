@@ -9,16 +9,12 @@ import java.util.List;
 @Service
 public class CarServiceImpl implements CarService {
 
-    private List<Car> cars = new ArrayList<>();
-
-    @PostConstruct
-    public void initializeCars() {
-        cars.add(new Car("Nissan", "Skyline r34", 2000));
-        cars.add(new Car("Toyota", "Supra a80", 1999));
-        cars.add(new Car("Honda", "NSX r", 1998));
-        cars.add(new Car("Mitsubishi", "Lancer Evolution VI", 2001));
-        cars.add(new Car("Toyota", "Land Cruiser 80", 1993));
-    }
+    private final List<Car> cars = new ArrayList<>(List.of(
+            new Car("Nissan", "Skyline r34", 2000),
+            new Car("Toyota", "Supra a80", 1999),
+            new Car("Honda", "NSX r", 1998),
+            new Car("Mitsubishi", "Lancer Evolution VI", 2001),
+            new Car("Toyota", "Land Cruiser 80", 1993)));
 
     @Override
     public List<Car> getCars(int count) {
