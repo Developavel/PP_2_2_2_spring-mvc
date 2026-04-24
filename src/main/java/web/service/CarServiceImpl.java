@@ -9,8 +9,9 @@ import java.util.List;
 @Service
 public class CarServiceImpl implements CarService {
 
-    List<Car> cars = new ArrayList<>();
+    private List<Car> cars = new ArrayList<>();
 
+    @PostConstruct
     public void initializeCars() {
         cars.add(new Car("Nissan", "Skyline r34", 2000));
         cars.add(new Car("Toyota", "Supra a80", 1999));
@@ -21,6 +22,6 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getCars(int count) {
-        return cars;
+        return cars.subList(0, Math.min(count, cars.size()));
     }
 }
