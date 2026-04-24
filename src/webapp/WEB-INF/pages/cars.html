@@ -6,10 +6,17 @@
     <title>Cars</title>
 </head>
 <body>
-<div>
-    <th:block th:each="car : ${cars}">
-        <p th:text="'brand: ' + ${car.brand} + '; model: ' + ${car.model} + '; year: ' + ${car.year}"></p>
-    </th:block>
-</div>
+<table border="1">
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.brand}"><</td>
+        <td th:text="${car.model}"><</td>
+        <td th:text="${car.year}"><</td>
+    </tr>
+</table>
 </body>
 </html>
