@@ -8,8 +8,8 @@
 <body>
 <div>
     <th:block th:each="car : ${cars}">
-        <p th:text="${car.brand} + ${car.model} + ${car.year}"></p>
+        <p th:text="'brand: ' + ${car.brand} + '; model: ' + ${car.model} + '; year: ' + ${car.year}"></p>
     </th:block>
 </div>
 </body>
-</html>-
+</html>
