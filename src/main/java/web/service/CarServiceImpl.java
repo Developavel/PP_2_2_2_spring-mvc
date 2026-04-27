@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import web.dao.CarDao;
 import web.model.Car;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -28,7 +27,6 @@ public class CarServiceImpl implements CarService {
             return allCars;
         }
 
-        return allCars.stream().limit(count).collect(Collectors.toList());
+        return carDao.getCars(count);
     }
-
 }
